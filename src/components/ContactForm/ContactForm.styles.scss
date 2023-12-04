@@ -1,0 +1,13 @@
+.contact-message {
+  text-align: center;
+
+  &.success {
+    color: #088972;
+  }
+}
+
+.form-heading {
+  text-align: center;
+  text-transform: capitalize;
+  color: #005547;
+}

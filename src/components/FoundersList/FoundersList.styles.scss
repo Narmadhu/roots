@@ -1,0 +1,64 @@
+.founders-main-heading {
+  text-transform: capitalize;
+  color: #005547;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.founders {
+  padding: {
+    top: 50px;
+    bottom: 50px;
+  }
+}
+
+.founders-item {
+  @media screen and (max-width: 991px) {
+    padding: {
+      right: 12px;
+      left: 12px;
+    }
+  }
+
+  @media screen and (min-width: 992px) {
+    padding: {
+      right: 50px;
+      left: 50px;
+    }
+  }
+}
+
+.founders-item + .founders-item {
+  @media screen and (max-width: 991px) {
+    padding-top: 50px;
+  }
+}
+
+.founders-heading {
+  text-transform: uppercase;
+  color: #005547;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.founders-name {
+  text-align: center;
+  color: #005547;
+  text-transform: capitalize;
+  margin: {
+    top: 10px;
+    bottom: 20px;
+  }
+}
+
+.founders-copy {
+  text-align: center;
+  color: #005547;
+  margin-bottom: 0;
+}
+
+.founders-image {
+  max-width: 100%;
+  display: block;
+  height: auto;
+}

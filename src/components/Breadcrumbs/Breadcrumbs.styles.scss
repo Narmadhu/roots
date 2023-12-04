@@ -1,0 +1,30 @@
+.breadcrumb-container {
+  padding: {
+    top: 30px;
+    bottom: 30px;
+  }
+
+  .breadcrumb {
+    margin: 0;
+  }
+}
+
+.breadcrumb-item {
+  &.active {
+    color: #005547;
+    text-transform: capitalize;
+
+    &::before {
+      color: #005547;
+      text-transform: capitalize;
+    }
+  }
+
+  a:link,
+  a:visited {
+    color: #088972;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: capitalize;
+  }
+}

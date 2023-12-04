@@ -1,0 +1,27 @@
+.accordion-group {
+  &.open {
+    .accordion-collapse {
+      height: auto;
+      opacity: 1;
+    }
+
+    .accordion-button {
+      svg {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  .accordion-collapse {
+    height: 0;
+    opacity: 0;
+    transition: height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  }
+
+  .accordion-button {
+    svg {
+      transform: rotate(0deg);
+      transition: transform 0.3s ease-in-out;
+    }
+  }
+}

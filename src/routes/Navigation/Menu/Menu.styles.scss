@@ -1,0 +1,131 @@
+.navbar {
+  padding: 0;
+  background-color: #fff;
+
+  &.sticky-top {
+    z-index: 1056;
+
+    @media screen and (min-width: 992px) {
+      padding: 0;
+    }
+  }
+
+  .navbar-brand {
+    @media screen and (max-width: 991px) {
+      margin-right: 0;
+      padding: 0;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    @media screen and (min-width: 992px) {
+      padding: {
+        top: 5px;
+        right: 0;
+        bottom: 5px;
+        left: 0;
+      }
+    }
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.navbar-container {
+  @media screen and (max-width: 991px) {
+    max-width: 100%;
+  }
+}
+
+.navbar-row {
+  @media screen and (max-width: 991px) {
+    height: 55px;
+  }
+
+  width: calc(100% + 24px);
+}
+
+.hamburger-icon {
+  display: block;
+  position: relative;
+  background-color: #088972;
+  width: 90%;
+  height: 4px;
+  transition: 0.3s;
+
+  &::before,
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    background-color: #088972;
+    width: 100%;
+    height: 4px;
+    transition: 0.3s;
+  }
+
+  &::before {
+    top: -8px;
+  }
+
+  &::after {
+    top: 8px;
+  }
+}
+
+.navbar-left {
+  display: flex;
+  justify-content: space-between;
+
+  @media screen and (min-width: 992px) {
+    flex-flow: initial;
+  }
+
+  .navbar-toggler {
+    border-radius: 0;
+    padding: 0;
+    background-color: transparent;
+    border: 0;
+    position: relative;
+    width: 35px;
+    height: 100%;
+
+    &:focus {
+      box-shadow: none;
+    }
+
+    &.open {
+      .hamburger-icon {
+        background-color: transparent;
+
+        &::before {
+          top: 0;
+          transform: rotate(45deg);
+        }
+
+        &::after {
+          top: 0;
+          transform: rotate(-45deg);
+        }
+      }
+    }
+  }
+
+  .navbar-toggler-icon {
+    background-image: none;
+    position: absolute;
+    left: 0;
+    width: 35px;
+    height: 30px;
+    color: #088972;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+}
+
+.navbar-logo {
+  width: 55px;
+}

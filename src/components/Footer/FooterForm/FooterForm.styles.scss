@@ -1,0 +1,24 @@
+.footer-form {
+  display: flex;
+
+  .group,
+  .form-input {
+    margin: 0;
+  }
+
+  .form-input {
+    height: 100%;
+  }
+
+  .form-input-label {
+    top: 12px;
+  }
+}
+
+.footer-message {
+  text-align: center;
+
+  &.success {
+    color: #088972;
+  }
+}

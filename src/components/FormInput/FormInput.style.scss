@@ -1,0 +1,89 @@
+@mixin shrinkLabel {
+  top: calc(0px - 14px);
+  font-size: 12px;
+  color: #000;
+}
+
+@mixin emailShrinkLabel {
+  top: -20px;
+  left: 0;
+  font-size: 12px;
+  color: #000;
+}
+
+.group {
+  position: relative;
+  margin: {
+    top: 45px;
+    bottom: 45px;
+  }
+
+  &.emailGroup {
+    margin: 0;
+    display: flex;
+    width: 100%;
+
+    .form-input {
+      padding-left: 10px;
+      margin: 0;
+
+      &:focus ~ .form-input-label {
+        @include emailShrinkLabel();
+      }
+    }
+
+    .form-input-label {
+      left: 10px;
+      top: 12px;
+    }
+  }
+
+  .form-input {
+    background: none;
+    background-color: #fff;
+    color: #ccc;
+    font-size: 18px;
+    padding: {
+      top: 10px;
+      right: 10px;
+      bottom: 10px;
+      left: 5px;
+    }
+    display: block;
+    width: 100%;
+    border-radius: 0;
+    border: {
+      top: 0;
+      right: 0;
+      bottom: 1px solid #ccc;
+      left: 0;
+    }
+    margin: {
+      top: 25px;
+      bottom: 25px;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &:focus ~ .form-input-label {
+      @include shrinkLabel();
+    }
+  }
+
+  .form-input-label {
+    color: #ccc;
+    font-size: 16px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 5px;
+    top: 10px;
+    transition: 300ms ease all;
+
+    &.shrink {
+      @include shrinkLabel();
+    }
+  }
+}

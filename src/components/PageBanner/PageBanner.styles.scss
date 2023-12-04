@@ -1,0 +1,46 @@
+.banner {
+  position: relative;
+
+  &.page-banner {
+    padding: {
+      top: 58px;
+      right: 0;
+      bottom: 58px;
+      left: 0;
+    }
+  }
+}
+
+.banner-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+  height: 100%;
+}
+
+.banner-large {
+  min-height: 350px;
+  display: flex;
+  align-items: center;
+}
+
+.banner-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0 , 0, 0, .7);
+  width: 100%;
+  height: 100%;
+}
+
+.banner-heading {
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-bottom: 0;
+  text-align: center;
+  position: relative;
+}
