@@ -18,7 +18,19 @@
   }
 }
 
-.sign-up-text {
+.social-login {
+  width: 100%;
+
+  button {
+    width: 100%;
+  }
+}
+
+.register-form {
+  margin-bottom: 30px;
+}
+
+.social-text {
   position: relative;
   color: #005547;
   font-size: 14px;

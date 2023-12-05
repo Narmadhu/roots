@@ -1,6 +1,5 @@
 .button-container {
   font-family: "Caviar Dreams", sans-serif;
-  width: auto;
   letter-spacing: 0.5px;
   line-height: 50px;
   font-size: 15px;
@@ -16,6 +15,7 @@
     background-color: #088972;
     color: #fff;
     border: 1px solid transparent;
+    width: auto;
 
     &:hover {
       background-color: #fff;
@@ -24,6 +24,7 @@
     }
   }
 
+  &.inline,
   &.secondary {
     background-color: #005547;
     color: #fff;
@@ -32,20 +33,6 @@
     &:hover {
       background-color: #fff;
       color: #005547;
-    }
-
-    @media screen and (min-width: 992px) {
-      padding: 0 12px;
-    }
-  }
-
-  &.google-sign-in {
-    border: 0;
-    background-color: #4285f4;
-    color: #fff;
-
-    &:hover {
-      background-color: #357ae8;
     }
   }
 
@@ -57,7 +44,27 @@
     &:hover {
       background-color: #088972;
       color: #fff;
-      border: 0;
+    }
+  }
+
+  &.secondary,
+  &.inverted {
+    width: 100%;
+  }
+
+  &.inline {
+    @media screen and (min-width: 992px) {
+      padding: 0 12px;
+    }
+  }
+
+  &.google-sign-in {
+    border: 0;
+    background-color: #4285f4;
+    color: #fff;
+
+    &:hover {
+      background-color: #db4437;
     }
   }
 

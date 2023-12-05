@@ -2,7 +2,8 @@ import React, { useState } from "react"
 
 import {
   createAuthUserWithEmailAndPassword,
-  createUserDocumentFromAuth
+  createUserDocumentFromAuth,
+  signInWithGooglePopup
 } from "../../utils/firebase/firebase.utils"
 
 import FormInput from "../FormInput/FormInput.component"
@@ -17,7 +18,7 @@ const defaultFormFields = {
   confirmPassword: ""
 }
 
-const SignUp = () => {
+const SignUp = ({ toggleComponent }) => {
   const [formFields, setFormFields] = useState(defaultFormFields)
   const {
     displayName,
@@ -28,6 +29,10 @@ const SignUp = () => {
 
   const resetFormFields = () => {
     setFormFields(defaultFormFields)
+  }
+
+  const signInWithGoogle = async () => {
+    await signInWithGooglePopup()
   }
 
   const handleSubmit = async (event) => {
@@ -63,12 +68,26 @@ const SignUp = () => {
   }
 
   return (
-    <div className="sign-up-container col-12 col-lg-6">
-      <h1>Don&apos;t have an account?</h1>
-      <div className="sign-up-text">
-        sign up with Roots:
-      </div>
-      <form onSubmit={handleSubmit}>
+    <div className="col-12 col-md-8 col-lg-5 mx-auto sign-up-container">
+      <h1>Sign Up With Roots</h1>
+
+      <form
+        className="register-form"
+        onSubmit={handleSubmit}
+      >
+        <div className="social-login">
+          <Button
+            buttonType="google"
+            type="button"
+            onClick={signInWithGoogle}
+          >
+            Google Sign Up
+          </Button>
+          <div className="social-text">
+            or register with your email:
+          </div>
+        </div>
+
         <FormInput
           label="Display Name"
           type="text"
@@ -106,12 +125,18 @@ const SignUp = () => {
         />
 
         <Button
-          buttonType="primary"
+          buttonType="secondary"
           type="submit"
         >
           Sign Up
         </Button>
       </form>
+      <Button
+        buttonType="inverted"
+        onClick={toggleComponent}
+      >
+        Have an account? Log In
+      </Button>
     </div>
   )
 }

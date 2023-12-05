@@ -1,9 +1,9 @@
 import React, { useState } from "react"
 
 import {
-  signInWithGooglePopup,
   createUserDocumentFromAuth,
-  signInAuthUserWithEmailAndPassword
+  signInAuthUserWithEmailAndPassword,
+  signInWithGooglePopup
 } from "../../utils/firebase/firebase.utils"
 
 import Button from "../Button/Button.component"
@@ -16,7 +16,7 @@ const defaultFormFields = {
   password: ""
 }
 
-const SignIn = () => {
+const SignIn = ({ toggleComponent }) => {
   const [formFields, setFormFields] = useState(defaultFormFields)
   const { email, password } = formFields
 
@@ -46,10 +46,13 @@ const SignIn = () => {
   }
 
   return (
-    <div className="col-12 col-lg-6 sign-in-container">
+    <div className="col-12 col-md-8 col-lg-5 mx-auto sign-in-container">
       <h1>Login to Roots</h1>
 
-      <form onSubmit={handleSubmit}>
+      <form
+        className="login-form"
+        onSubmit={handleSubmit}
+      >
         <div className="social-login">
           <Button
             buttonType="google"
@@ -58,7 +61,7 @@ const SignIn = () => {
           >
             Google Sign In
           </Button>
-          <div className="login-text">
+          <div className="social-text">
             or login with your email:
           </div>
         </div>
@@ -82,12 +85,18 @@ const SignIn = () => {
         />
 
         <Button
-          buttonType="primary"
+          buttonType="secondary"
           type="submit"
         >
           Sign In
         </Button>
       </form>
+      <Button
+        buttonType="inverted"
+        onClick={toggleComponent}
+      >
+        Register An Account
+      </Button>
     </div>
   )
 }

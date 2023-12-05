@@ -55,7 +55,7 @@ const MenuList = ({ showModal }) => {
               className={`nav-link navbar-link ${location.pathname.includes("/auth") ? "active" : ""}`.trim()}
               to="/auth"
             >
-              Sign In
+              Login
             </Link>
           )}
         </li>

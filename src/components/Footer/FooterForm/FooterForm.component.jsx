@@ -57,7 +57,7 @@ const FooterForm = () => {
             value={email}
           />
           <Button
-            buttonType="secondary"
+            buttonType="inline"
             type="submit"
           >
             Subscribe

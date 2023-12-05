@@ -2,6 +2,7 @@ import { initializeApp } from "firebase/app"
 
 import {
   createUserWithEmailAndPassword,
+  FacebookAuthProvider,
   getAuth,
   GoogleAuthProvider,
   onAuthStateChanged,
@@ -35,6 +36,7 @@ googleProvider.setCustomParameters({
 })
 
 export const auth = getAuth()
+export const facebook = new FacebookAuthProvider()
 
 export const signInWithGooglePopup = () => signInWithPopup(auth, googleProvider)
 export const signInWithGoogleRedirect = () => signInWithRedirect(auth, googleProvider)
