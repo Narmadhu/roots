@@ -1,12 +1,13 @@
-import React from "react"
-import { LazyLoadImage } from "react-lazy-load-image-component"
+import React from "react";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import { useNavigate } from "react-router-dom";
+import Button from "../Button/Button.component";
 
-import Button from "../Button/Button.component"
-
-import "./CategoryItem.styles.scss"
+import "./CategoryItem.styles.scss";
 
 const CategoryItem = ({ category }) => {
-  const { imageUrl, title } = category
+  const navigate = useNavigate();
+  const { imageUrl, title } = category;
 
   return (
     <div className="category-container">
@@ -18,17 +19,16 @@ const CategoryItem = ({ category }) => {
         width={351}
       />
       <div className="category-body-container">
-        <h2>
-          {title}
-        </h2>
+        <h2>{title}</h2>
         <Button
           buttonType="transparent"
+          onClick={() => navigate(`/shop/${title.toLowerCase()}`)}
         >
           Shop Now
         </Button>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default CategoryItem
+export default CategoryItem;
